@@ -1,5 +1,6 @@
 import logging
 import threading
+import os
 from flask import Flask
 from telegram import Update
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler
@@ -18,7 +19,8 @@ def index():
     return "Bot is running"
 
 def run_flask():
-    app.run(host='0.0.0.0', port=10000)
+    port = int(os.environ.get('PORT', 10000))
+    app.run(host='0.0.0.0', port=port)
 
 # List of allowed user IDs (replace with actual IDs)
 ALLOWED_USERS = [6765436791]
