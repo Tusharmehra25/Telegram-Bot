@@ -9,7 +9,7 @@ logging.basicConfig(
 )
 
 # List of allowed user IDs (replace with actual IDs)
-ALLOWED_USERS = [123456789]
+ALLOWED_USERS = [6765436791]
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text('Hello! Use /getlink to request your invite link.')
@@ -33,7 +33,7 @@ async def get_link(update: Update, context: ContextTypes.DEFAULT_TYPE):
         logging.error(f"Error creating link: {e}")
 
 if __name__ == '__main__':
-    TOKEN = 'YOUR_BOT_TOKEN'
+    TOKEN = '8715121565:AAE8O87XXYwPBErZVIz-vbQJUeEZIgllW4g'
     application = ApplicationBuilder().token(TOKEN).build()
     
     application.add_handler(CommandHandler('start', start))
